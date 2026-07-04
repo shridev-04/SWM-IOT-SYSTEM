@@ -1,269 +1,816 @@
 <div align="center">
-  <h1>🌡️ SWM IoT System</h1>
-  
-  <p>An intelligent, dynamic, and automated water temperature control system powered by ESP32, Cloud MQTT, and a native Android App.</p>
+
+# 🌡️ SWM IoT System
+
+### Intelligent Weather-Based Water Temperature Control System using ESP32, MQTT Cloud & Android
+
+*A Smart IoT solution that automatically adjusts water temperature according to real-time weather conditions.*
+
+![Platform](https://img.shields.io/badge/Platform-ESP32-blue?style=for-the-badge)
+![Android](https://img.shields.io/badge/Android-Kotlin-green?style=for-the-badge)
+![MQTT](https://img.shields.io/badge/Protocol-MQTT-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge)
+
 </div>
 
 ---
 
-## 📖 About The Project
-Traditional water heating and cooling systems (like geysers or refrigerators) use static temperature limits. They don't care about the outside weather. 
+# 📖 About The Project
 
-**The SWM IoT System** solves this by fetching real-time weather data (temperature & humidity) from the internet and dynamically adjusting the target water temperature using a custom inverse-relationship algorithm. It features a stunning **Cyberpunk-themed Android App** for real-time monitoring and control.
+Traditional water heating and cooling systems operate using fixed temperature values. They cannot understand changes in outdoor weather conditions, which often results in unnecessary power consumption and reduced comfort.
 
-### ✨ Key Features
-- **Dynamic Weather Algorithm:** Automatically calculates ideal water temperature based on outside heat and humidity.
-- **2°C Hysteresis Deadband:** Saves energy and extends hardware life by preventing compressor short-cycling.
-- **Lightning Fast Sync:** Powered by HiveMQ MQTT Cloud for real-time two-way communication.
-- **Premium Android UI:** Built with Kotlin and Glassmorphism design principles.
-- **Emergency Fail-safe:** 1-Click shutdown protocol right from the app.
+**SWM IoT System (Smart Weather Manager)** solves this problem by combining IoT, cloud communication, and real-time weather intelligence.
+
+The ESP32 continuously receives outdoor weather information (temperature and humidity) from the internet, processes the data using a custom algorithm, and automatically calculates the most suitable water temperature.
+
+The Android application provides real-time monitoring and wireless control from anywhere through MQTT Cloud.
+
+This project demonstrates how IoT, Cloud Computing, Mobile Applications, and Embedded Systems can work together to build an intelligent automation system.
 
 ---
 
-## 🛠️ Hardware Requirements
-- **ESP32 Development Board** (30-Pin Module V1 recommended)
-- **DS18B20** Waterproof Digital Temperature Sensor
-- **2-Channel Relay Module** (For Compressor/Cooling and Geyser/Heating)
-- **4.7kΩ Resistor** (For DS18B20 Data Line)
+# ✨ Features
 
-### 🔌 Circuit & Pin Configuration
-| Component | ESP32 Pin | Notes |
-| :--- | :--- | :--- |
-| **DS18B20 Sensor Data** | `GPIO 4` | Needs a 4.7k pull-up resistor to 3.3V |
-| **Compressor Relay** | `GPIO 5` | Active HIGH (Change in code if module is Active LOW) |
-| **Geyser Relay** | `GPIO 18` | Active HIGH |
-| **WiFi Status LED (Red)** | `GPIO 19` | Indicates disconnected status |
-| **WiFi Status LED (Green)**| `GPIO 15` | Indicates connected status |
-| **MQTT Data Blinker** | `GPIO 2` | Onboard Blue LED (Blinks rapidly on data transfer) |
+## 🌦 Weather-Based Smart Control
+Automatically adjusts the target water temperature according to the outside weather.
+
+## 🌡 Intelligent Temperature Algorithm
+Uses a custom inverse-relation algorithm instead of fixed temperature values.
+
+## 📡 Real-Time MQTT Communication
+ESP32 and Android stay synchronized instantly using HiveMQ Cloud MQTT.
+
+## 📱 Premium Android Application
+Modern Cyberpunk-inspired user interface developed completely in Kotlin.
+
+## ⚡ Automatic Heating & Cooling
+Controls both Heater and Cooling Compressor without manual intervention.
+
+## 🔄 Two-Way Synchronization
+Any change made from the Android App immediately updates the ESP32.
+
+## 💡 WiFi Status Indicators
+Dedicated LEDs display WiFi connection status.
+
+## 🚨 Emergency Shutdown
+Immediately turns OFF all outputs directly from the mobile application.
+
+## ⚙️ Energy Efficient
+Uses a 2°C hysteresis deadband to prevent unnecessary relay switching.
+
+## 🌍 Remote Monitoring
+Monitor the system from anywhere with internet connectivity.
+
+---
+
+# 🛠 Hardware Requirements
+
+| Component | Quantity |
+|-----------|----------|
+| ESP32 Development Board (30-Pin Module V1 Recommended) | 1 |
+| DS18B20 Waterproof Temperature Sensor | 1 |
+| 2-Channel Relay Module | 1 |
+| 4.7kΩ Resistor | 1 |
+| Red LED | 1 |
+| Green LED | 1 |
+| Jumper Wires | As Required |
+| Breadboard / PCB | Optional |
+| 5V Power Supply | 1 |
+
+---
+
+# 🔌 Circuit & Pin Configuration
+
+| Component | ESP32 GPIO | Description |
+|-----------|------------|-------------|
+| DS18B20 Data Pin | GPIO 4 | Water Temperature Sensor |
+| Compressor Relay | GPIO 5 | Cooling Output |
+| Geyser Relay | GPIO 18 | Heating Output |
+| Red LED | GPIO 19 | WiFi Disconnected Indicator |
+| Green LED | GPIO 15 | WiFi Connected Indicator |
+| Blue LED | GPIO 2 | MQTT Data Transfer Indicator |
+
+> **Important:** Connect a **4.7kΩ Pull-up Resistor** between the DS18B20 Data pin and the 3.3V supply.
+
+---
+
+# 📂 Repository Structure
+
+```text
+SWM-IOT-SYSTEM/
+
+├── ESP32_Code/
+│   └── SWM_IoT_System.ino
+│
+├── App_Source_Code/
+│   └── Android Studio Project
+│
+├── Base_APK/
+│   └── SWM_IoT_System.apk
+│
+├── Images/
+│   ├── Banner.png
+│   ├── Circuit_Diagram.png
+│   ├── Dashboard.png
+│   └── Hardware.png
+│
+├── LICENSE
+│
+└── README.md
+```
 
 ---
 
 # 🚀 Getting Started
 
-This repository is divided into two parts. Follow the guide based on your technical expertise:
+This repository is divided into two categories.
 
-## 🟢 Category 1: Quick Setup (For Normal Users)
-*Follow this if you just want to run the project without diving into the app source code.*
-
-### Step 1: Upload the ESP32 Code
-1. Download and install [Arduino IDE](https://www.arduino.cc/en/software).
-2. Install ESP32 board manager in Arduino IDE.
-3. Install the required libraries via Library Manager:
-   - `PubSubClient` (for MQTT)
-   - `OneWire` & `DallasTemperature` (for DS18B20)
-   - `ArduinoJson` (for Weather API)
-4. Open the `ESP32_Code` (the `.ino` file) from this repository.
-5. Update your WiFi SSID, Password, and your **OpenWeather API Key** in the code.
-6. Connect your ESP32 via USB and click **Upload**.
-
-### Step 2: Install the Android App
-1. Download the pre-built `Base_APK/SWM_IoT_System.apk` file from this repository to your Android phone.
-2. Install the APK (You may need to allow "Install from Unknown Sources").
-3. Open the app, enter your MQTT credentials (or use the default public test server provided in the code).
-4. **Done!** You can now monitor and control your hardware from the app.
+Choose the setup method according to your experience level.
 
 ---
 
-## 🔴 Category 2: Advanced Setup (For Developers & Students)
-*Follow this if you want to modify the App UI, change the Kotlin logic, or build the APK yourself.*
+# 🟢 Category 1 — Quick Setup
 
-### Step 1: App Development (Android Studio)
-1. Download and install [Android Studio](https://developer.android.com/studio).
-2. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/YourUsername/Your-Repo-Name.git
-   ```
-3. Open Android Studio -> Click **Open** -> Select the `App_Source_Code` folder.
-4. Let Gradle sync and download all required dependencies (Material Components, HiveMQ MQTT Client, Lottie Animations).
-5. Open `DashboardActivity.kt` to view the core logic of MQTT subscriptions and UI updates.
-6. Connect your Android phone via USB (enable USB Debugging) and hit the **Run (Play)** button in Android Studio to build and install the app.
+This method is recommended for users who simply want to use the project without modifying the Android source code.
 
-### Step 2: Modifying the ESP32 Firmware
-- The firmware uses a custom **Feedback Sync Engine**. If you add a new slider or button in the app, ensure you subscribe to its MQTT topic in `setupMQTT()` inside the `.ino` file.
-- The Core Temperature logic is located inside `calculateIdealWaterTemp()`. Students can modify this math equation to create their own custom climate algorithms!
+The setup requires only three major steps:
+
+- Configure HiveMQ Cloud
+- Upload ESP32 Firmware
+- Install Android APK
 
 ---
 
-## 🧠 How the Algorithm Works (For Students/Judges)
-The ESP32 calculates the `Ideal Target Temp` using an inverse relationship. 
-- **Example Scenario:** If outside is 35°C (Hot) and Humidity is 60%.
-- System detects it's hot (>= 25°C) and enters **Cooling Mode**.
-- It calculates Heat Intensity: `(35-25)/25 = 40%`.
-- It maps 40% intensity to a base cooling target (e.g., 9.2°C).
-- It subtracts an extra 1.8°C to compensate for high humidity discomfort.
-- **Final Target = 7.4°C**. All calculated completely offline on the edge node after receiving weather data!
+# ☁️ Step 1 — HiveMQ Cloud Configuration
 
----
-> **Note:** Please ensure you respect electrical safety guidelines when wiring 220V/110V appliances to relays.
+The ESP32 and Android application communicate using the MQTT protocol.
 
-*Made with ❤️ for IoT Enthusiasts and Students.*
-Follow this if you just want to run the project without diving into the app source code.
-**Step 1: HiveMQ Cloud Configuration**
-To enable real-time communication between the ESP32 hardware and the Android app, an MQTT broker setup is required.
-1. Navigate to the **HiveMQ Cloud** website (console.hivemq.cloud) and sign up for a free account.
-2. Once logged into the dashboard, access the **"Clusters"** section and create a **"New Serverless Cluster"** (Free tier).
-3. After the cluster is successfully generated, locate your **Cluster URL**. This functions as your **MQTT Server Address**. Copy and securely store this URL.
-4. Within the same dashboard, navigate to the **"Access Management"** or **"Credentials"** tab.
-5. Click **"Add New Credentials"** to create a custom **Username** and a secure **Password**.
-6. Keep these three core credentials ready for the next setup phase: the MQTT Server Address, Username, and Password.
-**Step 2: Upload the ESP32 Code**
-1. Download and install [Arduino IDE](https://www.arduino.cc/en/software).
-2. Install the ESP32 board manager in the Arduino IDE.
-3. Install the required libraries via the Library Manager: `PubSubClient`, `OneWire`, `DallasTemperature`, and `ArduinoJson`.
-4. Open the `ESP32_Code` (the `.ino` file) from this repository.
-5. In the configuration section of the code, update the parameters with your specific network and cloud details. Ensure you replace `WIFI_SSID`, `WIFI_PASSWORD`, `MQTT_SERVER`, `MQTT_USER`, `MQTT_PASS`, and the `WEATHER_API_KEY` with your actual secure credentials (currently set to `"***"` for privacy in the repository).
-6. Connect your ESP32 via USB and click **Upload**.
-**Step 3: Install the Android App**
-1. Download the pre-built `Base_APK/SWM_IoT_System.apk` file from this repository to your Android device.
-2. Install the APK (You may need to allow "Install from Unknown Sources" in your device settings).
-3. Open the app, and when prompted, enter the exact **MQTT Server Address**, **Username**, and **Password** that you configured in Step 1.
-4. **Done!** You can now monitor and control your hardware wirelessly from the app.
-<br>
----
-<br>
-### 🔴 Category 2: Advanced Setup (For Developers)
-Follow this if you want to modify the App UI, change the Kotlin logic, or build the APK yourself.
-**Step 1: App Development (Android Studio)**
-1. Download and install [Android Studio](https://developer.android.com/studio).
-2. Clone this repository to your local machine using git.
-3. Open Android Studio, click **Open**, and select the `App_Source_Code` folder.
-4. Let Gradle sync and download all required dependencies (Material Components, HiveMQ MQTT Client, Lottie Animations).
-5. Open `DashboardActivity.kt` to view the core logic of MQTT subscriptions and UI updates.
-6. Connect your Android phone via USB (enable USB Debugging) and hit the **Run (Play)** button in Android Studio to build and install the app.
-**Step 2: Modifying the ESP32 Firmware**
-* The firmware uses a custom **Feedback Sync Engine**. If you add a new slider or button in the app, ensure you subscribe to its MQTT topic in `setupMQTT()` inside the `.ino` file.
-* The Core Temperature logic is located inside `calculateIdealWaterTemp()`. Students can modify this math equation to create their own custom climate algorithms!
-<br>
----
-<br>
-## 🧠 How the Algorithm Works
-The ESP32 calculates the `Ideal Target Temp` using an inverse relationship. 
-* **Example Scenario:** If outside is 35°C (Hot) and Humidity is 60%.
-* System detects it's hot (>= 25°C) and enters **Cooling Mode**.
-* It calculates Heat Intensity: `(35-25)/25 = 40%`.
-* It maps 40% intensity to a base cooling target (e.g., 9.2°C).
-* It subtracts an extra 1.8°C to compensate for high humidity discomfort.
-* **Final Target = 7.4°C**. All calculated completely offline on the edge node after receiving weather data!
-<br>
----
-<br>
-> **Note:** Please ensure you respect electrical safety guidelines when wiring 220V/110V appliances to relays.
-*Made with ❤️ for IoT Enthusiasts and Students.*
-### Step 1: Upload the ESP32 Code
-1. Download and install [Arduino IDE](https://www.arduino.cc/en/software).
-2. Install ESP32 board manager in Arduino IDE.
-3. Install the required libraries via Library Manager:
-   - `PubSubClient` (for MQTT)
-   - `OneWire` & `DallasTemperature` (for DS18B20)
-   - `ArduinoJson` (for Weather API)
-4. Open the `ESP32_Code` (the `.ino` file) from this repository.
-5. Update your WiFi SSID, Password, and your **OpenWeather API Key** in the code.
-6. Connect your ESP32 via USB and click **Upload**.
+Before using the project, create your own free MQTT broker.
 
-### Step 2: Install the Android App
-1. Download the pre-built `Base_APK/SWM_IoT_System.apk` file from this repository to your Android phone.
-2. Install the APK (You may need to allow "Install from Unknown Sources").
-3. Open the app, enter your MQTT credentials (or use the default public test server provided in the code).
-4. **Done!** You can now monitor and control your hardware from the app.
+### 1. Create a HiveMQ Cloud Account
+
+Visit:
+
+https://console.hivemq.cloud
+
+Create a free account.
 
 ---
 
-## 🔴 Category 2: Advanced Setup (For Developers & Students)
-*Follow this if you want to modify the App UI, change the Kotlin logic, or build the APK yourself.*
+### 2. Create a Serverless Cluster
 
-### Step 1: App Development (Android Studio)
-1. Download and install [Android Studio](https://developer.android.com/studio).
-2. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/YourUsername/Your-Repo-Name.git
-   ```
-3. Open Android Studio -> Click **Open** -> Select the `App_Source_Code` folder.
-4. Let Gradle sync and download all required dependencies (Material Components, HiveMQ MQTT Client, Lottie Animations).
-5. Open `DashboardActivity.kt` to view the core logic of MQTT subscriptions and UI updates.
-6. Connect your Android phone via USB (enable USB Debugging) and hit the **Run (Play)** button in Android Studio to build and install the app.
+After login,
 
-### Step 2: Modifying the ESP32 Firmware
-- The firmware uses a custom **Feedback Sync Engine**. If you add a new slider or button in the app, ensure you subscribe to its MQTT topic in `setupMQTT()` inside the `.ino` file.
-- The Core Temperature logic is located inside `calculateIdealWaterTemp()`. Students can modify this math equation to create their own custom climate algorithms!
+Go to
+
+**Clusters**
+
+↓
+
+Click
+
+**Create New Serverless Cluster**
+
+↓
+
+Wait until the cluster becomes active.
+
+---
+
+### 3. Copy Your Cluster URL
+
+Example
+
+```
+xxxxxxxxxxxx.s1.eu.hivemq.cloud
+```
+
+This will be your
+
+**MQTT Server Address**
+
+Save it safely.
 
 ---
 
-## 🧠 How the Algorithm Works (For Students/Judges)
-The ESP32 calculates the `Ideal Target Temp` using an inverse relationship. 
-- **Example Scenario:** If outside is 35°C (Hot) and Humidity is 60%.
-- System detects it's hot (>= 25°C) and enters **Cooling Mode**.
-- It calculates Heat Intensity: `(35-25)/25 = 40%`.
-- It maps 40% intensity to a base cooling target (e.g., 9.2°C).
-- It subtracts an extra 1.8°C to compensate for high humidity discomfort.
-- **Final Target = 7.4°C**. All calculated completely offline on the edge node after receiving weather data!
+### 4. Create MQTT Credentials
+
+Go to
+
+**Access Management**
+
+↓
+
+**Credentials**
+
+↓
+
+**Add Credentials**
+
+Now create
+
+• Username
+
+• Password
+
+Save both carefully.
 
 ---
-> **Note:** Please ensure you respect electrical safety guidelines when wiring 220V/110V appliances to relays.
 
-*Made with ❤️ for IoT Enthusiasts and Students.*
+After completing this step, you should have:
 
-**Hardware Wiring Instructions:**
-*   **Temperature Sensor:** Connect the data wire of the DS18B20 sensor to the GPIO 4 pin on the ESP32. Ensure a 4.7kΩ resistor is securely placed between the data line and the 3.3V pin for proper sensor operation.
-*   **Relay Connections:** Wire the cooling/compressor relay to GPIO 5 and the heating/geyser relay to GPIO 18. 
-*   **Status Indicators:** Connect the Red LED to GPIO 19 (to indicate WiFi disconnected status) and the Green LED to GPIO 15 (to indicate successful WiFi connection). 
-*   **Data Transfer Indicator:** No external LED is required for MQTT data syncing; the system natively utilizes the ESP32's onboard Blue LED on GPIO 2 to blink rapidly during data transfers.
+✅ MQTT Server Address
+
+✅ MQTT Username
+
+✅ MQTT Password
+
+These credentials will be required for both the ESP32 firmware and Android application.
+
 ---
-# 🚀 Getting Started
-This repository is divided into two parts. Follow the guide based on your technical expertise:
-## 🟢 Category 1: Quick Setup
-*Follow this if you just want to run the project without diving into the app source code.*
-### Step 1: HiveMQ Cloud Configuration
-To enable real-time communication between the ESP32 hardware and the Android app, an MQTT broker setup is required.
-1. Navigate to the **HiveMQ Cloud** website (console.hivemq.cloud) and sign up for a free account.
-2. Once logged into the dashboard, access the **"Clusters"** section and create a **"New Serverless Cluster"** (Free tier).
-3. After the cluster is successfully generated, locate your **Cluster URL** (e.g., *****************.eu.hivemq.cloud). This functions as your **MQTT Server Address**. Copy and securely store this URL.
-4. Within the same dashboard, navigate to the **"Access Management"** or **"Credentials"** tab.
-5. Click **"Add New Credentials"** to create a custom **Username** (e.g.,******* ) and a secure **Password** (e.g., *********).
-6. Keep these three core credentials ready for the next setup phase: the **MQTT Server Address**, **Username**, and **Password**.
-### Step 2: Upload the ESP32 Code
-1. Download and install Arduino IDE.
-2. Install ESP32 board manager in Arduino IDE.
-3. Install the required libraries via Library Manager:
-   - PubSubClient (for MQTT)
-   - OneWire & DallasTemperature (for DS18B20)
-   - ArduinoJson (for Weather API)
-4. Open the ESP32_Code (the .ino file) from this repository.
-5. In the configuration section of the code, update the following parameters with your specific network and cloud details:
-   - WIFI_SSID: Enter your local WiFi network name.
-   - WIFI_PASSWORD: Enter your local WiFi password.
-   - MQTT_SERVER: Paste the **Cluster URL** copied from HiveMQ.
-   - MQTT_USER: Enter the HiveMQ **Username** you created.
-   - MQTT_PASS: Enter the HiveMQ **Password** you created.
-   - Update your **OpenWeather API Key** in the code.
-6. Connect your ESP32 via USB and click **Upload**.
-### Step 3: Install the Android App
-1. Download the pre-built Base_APK/SWM_IoT_System.apk file from this repository to your Android device.
-2. Install the APK (You may need to allow "Install from Unknown Sources" in your device settings).
-3. Open the app, and when prompted, enter the exact **MQTT Server Address**, **Username**, and **Password** that you configured in Step 1 (or use the default public test server provided in the code).
-4. **Done!** You can now monitor and control your hardware wirelessly from the app.
+
+# 💻 Step 2 — Upload ESP32 Firmware
+
+### Install Arduino IDE
+
+Download and install the latest Arduino IDE.
+
 ---
-## 🔴 Category 2: Advanced Setup (For Developers & Students)
-*Follow this if you want to modify the App UI, change the Kotlin logic, or build the APK yourself.*
-### Step 1: App Development (Android Studio)
-1. Download and install Android Studio.
-2. Clone this repository to your local machine:
-   git clone https://github.com/YourUsername/Your-Repo-Name.git
-3. Open Android Studio -> Click **Open** -> Select the App_Source_Code folder.
-4. Let Gradle sync and download all required dependencies (Material Components, HiveMQ MQTT Client, Lottie Animations).
-5. Open DashboardActivity.kt to view the core logic of MQTT subscriptions and UI updates.
-6. Connect your Android phone via USB (enable USB Debugging) and hit the **Run (Play)** button in Android Studio to build and install the app.
-### Step 2: Modifying the ESP32 Firmware
-- The firmware uses a custom **Feedback Sync Engine**. If you add a new slider or button in the app, ensure you subscribe to its MQTT topic in setupMQTT() inside the .ino file.
-- The Core Temperature logic is located inside calculateIdealWaterTemp(). Students can modify this math equation to create their own custom climate algorithms!
+
+### Install ESP32 Board Package
+
+Open Arduino IDE
+
+↓
+
+Boards Manager
+
+↓
+
+Search
+
+```
+ESP32
+```
+
+↓
+
+Install the latest stable version.
+
 ---
-## 🧠 How the Algorithm Works (For Students/Judges)
-The ESP32 calculates the Ideal Target Temp using an inverse relationship.
-- **Example Scenario:** If outside is 35°C (Hot) and Humidity is 60%.
-- System detects it's hot (>= 25°C) and enters **Cooling Mode**.
-- It calculates Heat Intensity: (35-25)/25 = 40%.
-- It maps 40% intensity to a base cooling target (e.g., 9.2°C).
-- It subtracts an extra 1.8°C to compensate for high humidity discomfort.
-- **Final Target = 7.4°C**. All calculated completely offline on the edge node after receiving weather data!
+
+### Install Required Libraries
+
+Open
+
+Library Manager
+
+Install the following libraries.
+
+• PubSubClient
+
+• OneWire
+
+• DallasTemperature
+
+• ArduinoJson
+
 ---
-> **Note:** Please ensure you respect electrical safety guidelines when wiring 220V/110V appliances to relays.
-*Made with ❤️ for IoT Enthusiasts and Students.*
+
+### Open the Firmware
+
+Navigate to
+
+```
+ESP32_Code/
+```
+
+Open
+
+```
+SWM_IoT_System.ino
+```
+
+---
+
+### Update Configuration
+
+Replace the following values with your own credentials.
+
+```
+WIFI_SSID
+
+WIFI_PASSWORD
+
+MQTT_SERVER
+
+MQTT_USER
+
+MQTT_PASS
+
+WEATHER_API_KEY
+```
+
+Do not leave any field empty.
+
+---
+
+### Upload the Firmware
+
+Connect the ESP32 using USB.
+
+Select the correct
+
+Board
+
+and
+
+COM Port
+
+Click
+
+**Upload**
+
+Wait until uploading completes successfully.
+
+The ESP32 will automatically restart and connect to WiFi.
+
+---
+---
+
+# 📱 Step 3 — Install the Android Application
+
+After successfully uploading the ESP32 firmware, install the Android application.
+
+### Download the APK
+
+Navigate to
+
+```
+Base_APK/
+```
+
+Download
+
+```
+SWM_IoT_System.apk
+```
+
+to your Android device.
+
+---
+
+### Install the APK
+
+If prompted,
+
+Enable
+
+**Install from Unknown Sources**
+
+in your Android settings.
+
+Complete the installation.
+
+---
+
+### Configure MQTT
+
+Launch the application.
+
+Enter the following information that you created in **HiveMQ Cloud**.
+
+- MQTT Server Address
+- MQTT Username
+- MQTT Password
+
+Save the configuration.
+
+---
+
+### Connect
+
+Ensure that
+
+- ESP32 is connected to WiFi.
+- Mobile phone has Internet access.
+- MQTT credentials are correct.
+
+Once connected, the Dashboard will immediately begin displaying live data.
+
+You can now monitor and control the complete system wirelessly.
+
+---
+
+# 🔴 Category 2 — Advanced Setup
+
+This section is intended for developers, students, and researchers who want to modify the Android application or customize the ESP32 firmware.
+
+---
+
+# 💻 Step 1 — Android Studio Setup
+
+### Install Android Studio
+
+Download and install the latest version of Android Studio.
+
+---
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/YourUsername/YourRepository.git
+```
+
+or download the ZIP file directly from GitHub.
+
+---
+
+### Open the Project
+
+Launch Android Studio.
+
+Select
+
+**Open Existing Project**
+
+Choose
+
+```
+App_Source_Code
+```
+
+Wait for Gradle Sync to complete.
+
+---
+
+### Dependencies
+
+The project automatically downloads all required libraries, including
+
+- Material Components
+- HiveMQ MQTT Client
+- Lottie Animation
+- AndroidX Libraries
+
+---
+
+### Run the Application
+
+Enable USB Debugging on your Android phone.
+
+Connect your device using USB.
+
+Press the
+
+▶ Run
+
+button.
+
+Android Studio will build and install the application.
+
+---
+
+# 🔧 Step 2 — ESP32 Firmware Customization
+
+The firmware is fully customizable.
+
+Developers can modify
+
+- MQTT Topics
+- Relay Logic
+- Weather Algorithm
+- Sensor Handling
+- Dashboard Synchronization
+
+Important Functions
+
+```
+setupWiFi()
+
+setupMQTT()
+
+callback()
+
+calculateIdealWaterTemp()
+
+controlRelays()
+
+publishSensorData()
+```
+
+Whenever a new button or slider is added to the Android application,
+
+remember to subscribe to the corresponding MQTT topic inside
+
+```
+setupMQTT()
+```
+
+---
+
+# 🧠 How the Algorithm Works
+
+Unlike traditional temperature controllers,
+
+SWM IoT System uses a dynamic weather-based algorithm.
+
+Instead of maintaining one fixed temperature,
+
+the target water temperature changes according to
+
+- Outdoor Temperature
+- Outdoor Humidity
+
+---
+
+## Example
+
+Outside Temperature
+
+```
+35°C
+```
+
+Humidity
+
+```
+60%
+```
+
+Since the outdoor temperature is greater than 25°C,
+
+the system automatically enters
+
+**Cooling Mode**
+
+Heat Intensity
+
+```
+(35 - 25) / 25
+
+= 40%
+```
+
+The controller maps this intensity to a cooling target.
+
+Example
+
+```
+9.2°C
+```
+
+Because humidity is relatively high,
+
+an additional
+
+```
+1.8°C
+```
+
+is reduced.
+
+Final Target Temperature
+
+```
+7.4°C
+```
+
+All calculations are performed directly on the ESP32 after receiving weather data.
+
+No cloud processing is required.
+
+---
+
+# 🔄 System Workflow
+
+```
+Weather API
+      │
+      ▼
+ESP32 downloads Weather Data
+      │
+      ▼
+Temperature Algorithm
+      │
+      ▼
+Ideal Water Temperature
+      │
+      ▼
+Heating / Cooling Decision
+      │
+      ▼
+Relay Control
+      │
+      ▼
+MQTT Publish
+      │
+      ▼
+Android Dashboard Update
+```
+
+---
+
+# 📡 MQTT Communication
+
+The project uses MQTT Cloud for instant communication.
+
+Example Topics
+
+```
+swm/temp
+
+swm/target
+
+swm/mode
+
+swm/heater
+
+swm/compressor
+
+swm/weather
+
+swm/status
+```
+
+The Android application subscribes to these topics and instantly updates the user interface.
+
+---
+
+# 📷 Screenshots
+
+You can add screenshots inside
+
+```
+Images/
+```
+
+Example
+
+```
+Images/
+
+├── Dashboard.png
+
+├── Login.png
+
+├── Settings.png
+
+├── Circuit.png
+
+└── Hardware.png
+```
+
+Then display them inside README.
+
+Example
+
+```markdown
+## Dashboard
+
+![Dashboard](Images/Dashboard.png)
+```
+
+---
+
+# ⚠️ Electrical Safety
+
+Please follow proper electrical safety guidelines.
+
+- Never touch exposed AC wiring while the system is powered.
+- Always disconnect the power supply before modifying connections.
+- Use properly rated relay modules.
+- Ensure secure insulation for all AC wiring.
+- Keep the controller away from water.
+- Use a regulated power supply for the ESP32.
+
+The author is not responsible for damage caused by improper wiring.
+
+---
+
+# ❓ Troubleshooting
+
+## ESP32 does not connect to WiFi
+
+Check
+
+- WiFi SSID
+- Password
+- Internet Connection
+
+---
+
+## MQTT Connection Failed
+
+Verify
+
+- Cluster URL
+- Username
+- Password
+
+Ensure the HiveMQ Cluster is running.
+
+---
+
+## Sensor Not Detected
+
+Check
+
+- DS18B20 Wiring
+- GPIO 4 Connection
+- 4.7kΩ Pull-up Resistor
+
+---
+
+## Android App Shows No Data
+
+Verify
+
+- Internet Connection
+- MQTT Credentials
+- ESP32 Connection Status
+
+---
+
+# 🚀 Future Improvements
+
+The project can be extended with
+
+- AI-based Temperature Prediction
+- Voice Control
+- Google Assistant Integration
+- OTA Firmware Updates
+- Firebase Cloud Backup
+- Power Consumption Monitoring
+- Water Level Monitoring
+- Multiple Temperature Sensors
+- ESP32 Camera Support
+- Web Dashboard
+
+---
+
+# 🤝 Contributing
+
+Contributions are always welcome.
+
+If you would like to improve this project,
+
+1. Fork the repository.
+
+2. Create a new feature branch.
+
+3. Commit your changes.
+
+4. Push the branch.
+
+5. Create a Pull Request.
+
+---
+
+# 📜 License
+
+This project is released under the **MIT License**.
+
+You are free to use, modify, and distribute this project while retaining the original license.
+
+---
+
+# ❤️ Author
+
+**Developed by**
+
+**Shridev Pandit**
+
+Electronics & Communication Engineering Student
+
+Passionate about
+
+- Embedded Systems
+- Internet of Things (IoT)
+- Android Development
+- Artificial Intelligence
+- Robotics
+
+---
+
+# ⭐ Support
+
+If you found this project helpful,
+
+please consider
+
+⭐ Starring this repository
+
+and sharing it with other developers and students.
+
+Your support motivates future development.
+
+---
+
+<div align="center">
+
+## ❤️ Thank You For Visiting This Repository ❤️
+
+**Happy Coding! 🚀**
+
+</div>

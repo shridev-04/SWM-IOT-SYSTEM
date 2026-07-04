@@ -19,13 +19,13 @@
 // ═══════════════════════════════════════════════════════
 // CONFIGURATION SECTION 
 // ═══════════════════════════════════════════════════════
-#define WIFI_SSID       "SHRIDEV"
-#define WIFI_PASSWORD   "1234567898"
+#define WIFI_SSID       "ERNTER_YOUR_WIFI_NAME"
+#define WIFI_PASSWORD   "ENTER_YOUR_WIFI_PASS"
 
-#define MQTT_SERVER     "a1b917c769d84be0ace8154f70bf6cdc.s1.eu.hivemq.cloud"
+#define MQTT_SERVER     "ENTER_YOUR_MQQT_ADDRESS"
 #define MQTT_PORT       8883
-#define MQTT_USER       "shridev"
-#define MQTT_PASS       "QWcc23@$"
+#define MQTT_USER       "ENTER_YOUR_MQQT_USERNAME"
+#define MQTT_PASS       "ENTER_YOUR_MQQT_PASSWORD"
 #define MQTT_CLIENT_ID  "ESP32_SmartFridge"
 #define MQTT_USE_SSL    true
 

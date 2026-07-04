@@ -45,7 +45,7 @@
 
 #define PIN_SRV_G       2
 #define PIN_WIFI_R      19
-#define PIN_WIFI_G      21
+#define PIN_WIFI_G      5
 
 // No buttons needed
 

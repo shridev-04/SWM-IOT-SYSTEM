@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🌡️ SWM IoT System</h1>
-  <h3>Next-Generation Smart Water Management System</h3>
+  
   <p>An intelligent, dynamic, and automated water temperature control system powered by ESP32, Cloud MQTT, and a native Android App.</p>
 </div>
 

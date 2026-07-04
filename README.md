@@ -288,7 +288,7 @@ ESP32_Code/
 Open
 
 ```
-SWM_IoT_System.ino
+SWM HARDWARE.ino
 ```
 
 ---
@@ -779,7 +779,7 @@ You are free to use, modify, and distribute this project while retaining the ori
 
 **Developed by**
 
-**Shridev Pandit**
+**Shridev**
 
 Electronics & Communication Engineering Student
 
@@ -788,7 +788,6 @@ Passionate about
 - Embedded Systems
 - Internet of Things (IoT)
 - Android Development
-- Artificial Intelligence
 - Robotics
 
 ---

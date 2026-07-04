@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.sigma.smartfridge.app-mergeDebugResources-30:/layout/activity_dashboard.xml",
+        "source": "com.sigma.smartfridge.app-main-33:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "com.sigma.smartfridge.app-mergeDebugResources-30:/layout/activity_splash.xml",
+        "source": "com.sigma.smartfridge.app-main-33:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.sigma.smartfridge.app-mergeDebugResources-30:/layout/activity_config.xml",
+        "source": "com.sigma.smartfridge.app-main-33:/layout/activity_config.xml"
+    }
+]

@@ -29,7 +29,7 @@
 #define MQTT_CLIENT_ID  "ESP32_SmartFridge"
 #define MQTT_USE_SSL    true
 
-#define WEATHER_API_KEY "31fd08a0e944420c2323f96d829baecf"
+#define WEATHER_API_KEY "ENTER_YOUR_WETHER_API"
 #define WEATHER_FETCH_INTERVAL 600000 
 
 // ═══════════════════════════════════════════════════════

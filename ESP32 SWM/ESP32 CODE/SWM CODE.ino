@@ -19,17 +19,17 @@
 // ═══════════════════════════════════════════════════════
 // CONFIGURATION SECTION 
 // ═══════════════════════════════════════════════════════
-#define WIFI_SSID       "SHRIDEV"
-#define WIFI_PASSWORD   "1234567898"
+#define WIFI_SSID       "ENTER YOUR WI-FI SSID"
+#define WIFI_PASSWORD   "ENTER YOUR WI-FI PASSWORD"
 
-#define MQTT_SERVER     "a1b917c769d84be0ace8154f70bf6cdc.s1.eu.hivemq.cloud"
+#define MQTT_SERVER     "ENTER YOUR MQQT SERVER ADDRESS"
 #define MQTT_PORT       8883
-#define MQTT_USER       "shridev"
-#define MQTT_PASS       "QWcc23@$"
+#define MQTT_USER       "ENTER YOUR MQQT USERNAME"
+#define MQTT_PASS       "ENTER YOUR MQQT PASSPORT"
 #define MQTT_CLIENT_ID  "ESP32_SmartFridge"
 #define MQTT_USE_SSL    true
 
-#define WEATHER_API_KEY "31fd08a0e944420c2323f96d829baecf"
+#define WEATHER_API_KEY "ENTER YOUR WEATHER API"
 #define WEATHER_FETCH_INTERVAL 600000 
 
 // ═══════════════════════════════════════════════════════

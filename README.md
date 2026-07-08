@@ -96,36 +96,38 @@ A more technical breakdown of the prediction formula and the relay safety logic 
 
 ```mermaid
 flowchart LR
-    subgraph Device["🔌 ESP32 Node"]
-        DS[DS18B20\nWater Temp Sensor]
-        OLED[0.96" OLED\nSSD1306]
-        LED1[WiFi Status LED]
-        LED2[Server Status LED]
-        RELAY1[Heating Relay\nGeyser]
-        RELAY2[Cooling Relay\nCompressor]
-        FW[ESP32 Firmware\nPrediction + Control Engine]
-    end
 
-    subgraph Cloud["☁️ Cloud Services"]
-        MQTT[(MQTT Broker\nTLS · Port 8883)]
-        WEATHER[(Weather API\nOpenWeatherMap)]
-    end
+subgraph Device["ESP32 Node"]
+    DS["DS18B20<br/>Water Temp Sensor"]
+    OLED["0.96 OLED<br/>SSD1306"]
+    LED1["WiFi Status LED"]
+    LED2["Server Status LED"]
+    RELAY1["Heating Relay<br/>Geyser"]
+    RELAY2["Cooling Relay<br/>Compressor"]
+    FW["ESP32 Firmware<br/>Prediction + Control Engine"]
+end
 
-    subgraph Phone["📱 Android App"]
-        UI[Live Dashboard]
-        CFG[Broker Config Screen]
-    end
+subgraph Cloud["Cloud Services"]
+    MQTT["MQTT Broker<br/>TLS : 8883"]
+    WEATHER["Weather API<br/>OpenWeatherMap"]
+end
 
-    DS --> FW
-    FW --> OLED
-    FW --> LED1
-    FW --> LED2
-    FW --> RELAY1
-    FW --> RELAY2
-    FW <-->|Publish / Subscribe| MQTT
-    FW -->|HTTPS GET| WEATHER
-    MQTT <-->|Publish / Subscribe| UI
-    CFG -.saves broker creds.-> UI
+subgraph Phone["Android App"]
+    UI["Live Dashboard"]
+    CFG["Broker Config Screen"]
+end
+
+DS --> FW
+FW --> OLED
+FW --> LED1
+FW --> LED2
+FW --> RELAY1
+FW --> RELAY2
+
+FW <-->|MQTT Publish / Subscribe| MQTT
+FW -->|HTTPS GET| WEATHER
+MQTT <-->|Publish / Subscribe| UI
+CFG --> UI
 ```
 
 **Data direction summary:**

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/black">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚡ Smart Fridge Setup"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/etHost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MQTT Host Address"
+        android:textColorHint="#888888"
+        android:textColor="@color/white"
+        android:background="#333333"
+        android:padding="16dp"
+        android:layout_marginBottom="15dp" />
+
+    <EditText
+        android:id="@+id/etUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MQTT Username"
+        android:textColorHint="#888888"
+        android:textColor="@color/white"
+        android:background="#333333"
+        android:padding="16dp"
+        android:layout_marginBottom="15dp" />
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="MQTT Password"
+        android:inputType="textPassword"
+        android:textColorHint="#888888"
+        android:textColor="@color/white"
+        android:background="#333333"
+        android:padding="16dp"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONNECT &amp; SAVE"
+        android:backgroundTint="@color/teal_200"
+        android:textColor="@color/black"
+        android:padding="15dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_card_glassmorphic_force.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\card_glassmorphic_force.xml"
+    },
+    {
+        "merged": "com.swm.iotsystem.app-debug-32:/layout_activity_dashboard.xml.flat",
+        "source": "com.swm.iotsystem.app-main-34:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_futuristic_gradient.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_futuristic_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_card_glassmorphic.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\card_glassmorphic.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_futuristic_border.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\futuristic_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\layout_activity_config.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\activity_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_cyberpunk_glass_red_button.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_cyberpunk_glass_red_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\anim\\slide_out_left.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_cyberpunk_input.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_cyberpunk_input.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_smoke_hot.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_smoke_hot.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_cyberpunk_glass.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_cyberpunk_glass.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_splash_gradient.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_splash_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_slider_thumb_cold.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\slider_thumb_cold.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_edit_text_premium.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\edit_text_premium.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_swm_iot_system.png.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\swm_iot_system.png"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\layout_activity_dashboard.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\activity_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\anim_slide_up.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\anim\\slide_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\anim_fade_out.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\anim\\fade_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_ultra_hd.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_ultra_hd.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_bottom_sheet.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_smoke_force.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_smoke_force.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\anim_fade_in.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\anim\\fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_card_glassmorphic_cold.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\card_glassmorphic_cold.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_circle_border_glow.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\circle_border_glow.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\layout_dialog_settings.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\dialog_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\anim_scale_in.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\anim\\scale_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\anim\\slide_in_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_cyberpunk_solid_red_button.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_cyberpunk_solid_red_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_ripple_card.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\ripple_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_circle_border.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\circle_border.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_btn_premium.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\btn_premium.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_slider_thumb_hot.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\slider_thumb_hot.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_smoke_cold.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_smoke_cold.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_bg_cyberpunk_glass_button.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\bg_cyberpunk_glass_button.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-debug-32:\\drawable_card_glassmorphic_hot.xml.flat",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\drawable\\card_glassmorphic_hot.xml"
+    }
+]

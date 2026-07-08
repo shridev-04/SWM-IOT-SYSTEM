@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-mergeDebugResources-31:\\layout\\dialog_settings.xml",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\dialog_settings.xml"
+    },
+    {
+        "merged": "com.swm.iotsystem.app-mergeDebugResources-31:/layout/activity_dashboard.xml",
+        "source": "com.swm.iotsystem.app-main-34:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-mergeDebugResources-31:\\layout\\activity_dashboard.xml",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\activity_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-mergeDebugResources-31:\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-mergeDebugResources-31:\\layout\\activity_config.xml",
+        "source": "C:\\Users\\HLBS\\.gradle\\daemon\\8.13\\com.swm.iotsystem.app-main-34:\\layout\\activity_config.xml"
+    }
+]
